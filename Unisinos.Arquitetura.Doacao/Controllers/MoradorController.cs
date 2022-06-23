@@ -22,6 +22,8 @@ namespace HelpSVP.Controllers
         // GET: Moradors
         public async Task<IActionResult> Index()
         {
+            var teste = _context.Morador;
+
             return View(await _context.Morador.ToListAsync());
         }
 

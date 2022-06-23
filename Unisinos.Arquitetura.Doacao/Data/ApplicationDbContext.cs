@@ -22,5 +22,13 @@ namespace HelpSVP.Data
             : base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Morador>(entity =>
+            {
+                entity.ToTable("morador");
+            });
+        }
     }
 }

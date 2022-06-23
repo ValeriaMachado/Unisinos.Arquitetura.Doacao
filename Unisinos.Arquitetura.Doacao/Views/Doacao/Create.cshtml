@@ -13,7 +13,7 @@
         <form>
             <div class="form-group">
                 <label>Selecione o tipo de doação</label>
-                <select class="form-select" aria-label="Default select example" asp-for="@tipoDoacao">
+                <select class="form-select" id="select-tipo-doacao" aria-label="Default select example" asp-for="@tipoDoacao">
                     <option selected>Selecione o tipo de doação</option>
                     <option value="1">Dinheiro</option>
                     <option value="2">Alimentos</option>
@@ -24,9 +24,9 @@
             </div>
         </form>
     </div>
-    <div class="col-md-4">
+    <div class="col-12 div-doacao" id="div-doacao-3" style="display: none">
+        <h1>Higiene</h1>
         <form asp-action="Create">
-            //Higiene
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Validade" class="control-label"></label>
@@ -39,9 +39,9 @@
         </form>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-12 div-doacao" id="div-doacao-1" style="display: none">
+        <h1>Financeira</h1>
         <form asp-action="Create">
-            //Financeira
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Moeda" class="control-label"></label>
@@ -59,9 +59,9 @@
         </form>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-12 div-doacao" id="div-doacao-2" style="display: none">
+        <h1>Alimento</h1>
         <form asp-action="Create">
-            //Alimento
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Validade" class="control-label"></label>
@@ -78,9 +78,9 @@
         </form>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-12 div-doacao" id="div-doacao-4" style="display: none">
+        <h1>Medicamento</h1>
         <form asp-action="Create">
-            //Medicamento
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Validade" class="control-label"></label>
@@ -108,9 +108,9 @@
         </form>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-12 div-doacao" id="div-doacao-5" style="display: none">
+        <h1>Outros</h1>
         <form asp-action="Create">
-            //Outros
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Finalidade" class="control-label"></label>
@@ -121,7 +121,7 @@
                 <label asp-for="Tamanho" class="control-label"></label>
                 <input asp-for="Tamanho" class="form-control" />
                 <span asp-validation-for="Tamanho" class="text-danger"></span>
-            </div>            
+            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -134,4 +134,16 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+            $('#select-tipo-doacao').change(function () {
+
+                let val = $(this).val();
+
+                $('.div-doacao').hide();
+                $('#div-doacao-' + val).show();
+            });
+        });
+    </script>
 }
