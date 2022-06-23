@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace HelpSVP.Data.Repositories
 {
-    public class DoacaoAlimentoRepository
+    public class MoradorRepository
     {
         private readonly ApplicationDbContext _applicationDb;
 
-        public DoacaoAlimentoRepository(ApplicationDbContext applicationDb)
+        public MoradorRepository(ApplicationDbContext applicationDb)
         {
             _applicationDb = applicationDb;
         }
 
-        public bool Add(DoacaoAlimento doacao)
+        public bool Add(Morador morador)
         {
-            _applicationDb.DoacaoAlimento.Add(doacao);
+            _applicationDb.Morador.Add(morador);
 
             return _applicationDb.SaveChanges() > 0;
         }

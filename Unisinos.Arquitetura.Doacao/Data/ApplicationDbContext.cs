@@ -16,6 +16,7 @@ namespace HelpSVP.Data
         public DbSet<DoacaoMedicamento> DoacaoMedicamento { get; }
 
         public DbSet<DoacaoProdutoGenerico> DoacaoProdutoGenerico { get; }
+        public DbSet<Morador> Morador { get; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
