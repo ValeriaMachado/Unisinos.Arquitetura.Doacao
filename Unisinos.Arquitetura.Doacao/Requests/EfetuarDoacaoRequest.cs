@@ -14,5 +14,6 @@ namespace HelpSVP.Requests
         public string Imagem { get; set; }
         public string Moeda { get; set; }
 
+        public string Tamanho { get; set; }
     }
 }
