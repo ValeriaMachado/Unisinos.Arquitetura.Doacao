@@ -7,6 +7,16 @@ namespace HelpSVP.Data
     public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<DoacaoProdutoConfeccionado> DoacaoProdutoConfeccionados { get; }
+
+        public DbSet<DoacaoFinanceira> DoacaoFinanceira { get; }
+
+        public DbSet<DoacaoAlimento> DoacaoAlimento { get; }
+
+        public DbSet<DoacaoHigiene> DoacaoHigiene { get; }
+        public DbSet<DoacaoMedicamento> DoacaoMedicamento { get; }
+
+        public DbSet<DoacaoProdutoGenerico> DoacaoProdutoGenerico { get; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

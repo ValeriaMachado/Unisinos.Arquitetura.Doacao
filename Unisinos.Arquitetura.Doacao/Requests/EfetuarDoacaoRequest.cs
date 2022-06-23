@@ -12,5 +12,7 @@ namespace HelpSVP.Requests
         public string Finalidade { get; set; }
         public double? Valor { get; set; }
         public string Imagem { get; set; }
+        public string Moeda { get; set; }
+
     }
 }
